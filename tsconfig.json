@@ -26,6 +26,7 @@
   "exclude": ["node_modules"],
   "include": [
     "src/**/*.ts",
+    "nodes/**/*.ts",
     "*.ts",
     "./package.json"
   ]
