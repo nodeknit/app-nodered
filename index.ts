@@ -52,7 +52,14 @@ const settings: LocalSettings = {
   },
   ...(process.env.NODE_ENV === "production" || process.env.NODE_RED_TOKEN) && { adminAuth: getNodeRedAuth() },
   uiPort: 0,
-  uiHost: ""
+  uiHost: "",
+  logging: {
+    console: {
+        level: "error",
+        metrics: false,
+        audit: false
+    }
+  }
 }
 
 if(process.env.NODERED_NODES_DIRS) {
