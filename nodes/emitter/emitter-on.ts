@@ -1,6 +1,6 @@
 var emitterRay = {}
-module.exports = function(RED) { 
-  function EmitterOnNode(config) {
+module.exports = function(RED: { nodes: { createNode: (arg0: any, arg1: any) => void; registerType: (arg0: string, arg1: { (config: any): void; (config: any): void; (config: any): void; }) => void; }; }) { 
+  function EmitterOnNode(config: any) {
       RED.nodes.createNode(this, config);
       let node = this;
 
@@ -36,14 +36,14 @@ module.exports = function(RED) {
     //     });
     
     //     return await a;
-    });
+    // });
   }
   RED.nodes.registerType("emitter-on", EmitterOnNode);
 
-  function EmitterEndNode(config) {
+  function EmitterEndNode(config: any) {
     RED.nodes.createNode(this, config);
     let node = this;
-    this.on('input', async function(msg) {
+    this.on('input', async function(msg: any) {
         // if (msg.emitterRayId && emitterRay[msg.emitterRayId]) {
         //     setImmediate(async () => {
         //         try {
@@ -63,10 +63,10 @@ module.exports = function(RED) {
 
   RED.nodes.registerType("emitter-end", EmitterEndNode);
 
-  function EmitterThrowNode(config) {
+  function EmitterThrowNode(config: any) {
     RED.nodes.createNode(this, config);
     let node = this;
-    this.on('input',  async function(msg) {
+    this.on('input',  async function(msg: any) {
     //   if (msg.emitterRayId && emitterRay[msg.emitterRayId]) {
     //     // console.log("ENDpayload",msg.payload)
     //     await emitterRay[msg.emitterRayId].throw(msg.payload);
