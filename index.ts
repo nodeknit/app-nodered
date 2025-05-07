@@ -163,7 +163,7 @@ export class AppNodeRed extends AbstractApp {
     RED.init(httpRedServer,settings);
     app.use(settings.httpAdminRoot,RED.httpAdmin);  
     app.use(settings.httpNodeRoot,RED.httpNode);
-    const RED_PORT = process.env.RED_PORT !== undefined && isNaN(parseInt(process.env.RED_PORT)) !== true ? parseInt(process.env.RED_PORT) : 42881; 
+    const RED_PORT = process.env.RED_PORT !== undefined && isNaN(parseInt(process.env.RED_PORT)) !== true ? parseInt(process.env.RED_PORT) : 3001; 
     httpRedServer.listen(RED_PORT);
     AppManager.log.info("Node-RED app mounted on port", RED_PORT);
     RED.start();
