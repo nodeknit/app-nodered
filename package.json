@@ -11,10 +11,14 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@nodeknit/app-manager": "commit",
+    "@nodeknit/app-manager": "*",
     "@types/node-red": "^1.3.5"
   },
   "dependencies": {
     "node-red": "^4.0.9"
+  },
+  "peerDependencies": {
+    "reflect-metadata": "^0.2.2",
+    "@nodeknit/app-manager": "*"
   }
 }
